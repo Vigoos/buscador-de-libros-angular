@@ -1,0 +1,22 @@
+<div class="book-search-container">
+  <h1>Buscador de Libros 📚 por Aron Boyan </h1>
+
+  <input
+    type="text"
+    [(ngModel)]="query"
+    (keyup.enter)="search()"
+    placeholder="Escribe el título o autor..."
+  />
+  <button (click)="search()">Buscar</button>
+
+  <div *ngIf="isLoading" class="loading">Buscando...</div>
+  <div *ngIf="error" class="error">{{ error }}</div>
+
+  <div class="books-grid" *ngIf="books.length">
+    <div class="book-card" *ngFor="let book of books">
+      <img [src]="book.volumeInfo.imageLinks?.thumbnail" alt="Portada" />
+      <h3>{{ book.volumeInfo.title }}</h3>
+      <p>{{ book.volumeInfo.authors?.join(', ') }}</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+.book-search-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem;
+  text-align: center;
+
+  input {
+    width: 60%;
+    padding: 10px;
+    margin-right: 10px;
+  }
+
+  button {
+    padding: 10px 20px;
+  }
+
+  .loading {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #444;
+  }
+
+  .error {
+    color: red;
+    margin-top: 10px;
+  }
+
+  .books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+    margin-top: 2rem;
+  }
+
+  .book-card {
+    padding: 10px;
+    border: 1px solid #ddd;
+    background: #fafafa;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+
+    img {
+      width: 100px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
